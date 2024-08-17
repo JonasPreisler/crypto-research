@@ -2,14 +2,14 @@
 .flex.flex-wrap.gap-4.text-xl
   .p-2.rounded.bg-slate-800.w-48
     .mb-2
-      .text-sm.font-bold.bg-black.rounded.inline.tracking-wide.py-1.px-2.text-emerald-500 FIND WALLETS
-    div = link_to 'dex', 'https://dexscreener.com/?rankBy=trendingScoreH6&order=desc&minLiq=50000&min24HTxns=200&min24HVol=100000', target: :blank, class: 'bg-slate-800 rounded shadow hover:bg-slate-700 text-slate-500 shadow px-1'
+      .text-sm.font-bold.bg-black.rounded.inline.tracking-wide.py-1.px-2.text-emerald-500 FIND WALLET
+    div = link_to 'dex', 'https://dexscreener.com/?rankBy=trendingScoreH6&order=desc&minLiq=50000&min24HTxns=200&min24HVol=100000', target: :_blank, class: 'bg-slate-800 rounded shadow hover:bg-slate-700 text-slate-500 shadow px-1'
   .p-2.rounded.bg-slate-800.w-96
     .mb-2
       .text-sm.font-bold.bg-black.rounded.inline.tracking-wide.py-1.px-2.text-emerald-500 CHECK PROJECT
-    div = link_to 'twitter score', 'https://twitterscore.io/', target: :blank, class: 'bg-slate-800 rounded shadow hover:bg-slate-700 text-slate-500 shadow px-1'
-    div = link_to 'solscan', 'https://solscan.io/', target: :blank, class: 'bg-slate-800 rounded shadow hover:bg-slate-700 text-slate-500 shadow px-1'
-    div = link_to 'rugcheck', 'https://rugcheck.xyz/', target: :blank, class: 'bg-slate-800 rounded shadow hover:bg-slate-700 text-slate-500 shadow px-1'
+    div = link_to 'twitter score', 'https://twitterscore.io/', target: :_blank, class: 'bg-slate-800 rounded shadow hover:bg-slate-700 text-slate-500 shadow px-1'
+    div = link_to 'solscan', 'https://solscan.io/', target: :_blank, class: 'bg-slate-800 rounded shadow hover:bg-slate-700 text-slate-500 shadow px-1'
+    div = link_to 'rugcheck', 'https://rugcheck.xyz/', target: :_blank, class: 'bg-slate-800 rounded shadow hover:bg-slate-700 text-slate-500 shadow px-1'
     hr.border-slate-700.my-2
     .text-xs.px-1
       div Liquidity must be collateralized
@@ -18,13 +18,13 @@
   .p-2.rounded.bg-slate-800.w-48
     .mb-2
       .text-sm.font-bold.bg-black.rounded.inline.tracking-wide.py-1.px-2.text-emerald-500 TRACK WALLET
-    div = link_to 'cielo', 'https://app.cielo.finance/feed', target: :blank, class: 'bg-slate-800 rounded shadow hover:bg-slate-700 text-slate-500 shadow px-1'
+    div = link_to 'cielo', 'https://app.cielo.finance/feed', target: :_blank, class: 'bg-slate-800 rounded shadow hover:bg-slate-700 text-slate-500 shadow px-1'
     div
-      = link_to 'gmgn', 'https://gmgn.ai/?chain=sol', target: :blank, class: 'bg-slate-800 rounded shadow hover:bg-slate-700 text-slate-500 shadow px-1'
+      = link_to 'gmgn', 'https://gmgn.ai/?chain=sol', target: :_blank, class: 'bg-slate-800 rounded shadow hover:bg-slate-700 text-slate-500 shadow px-1'
       .text-xs.px-1 PNL and winrate (min 70%)
-    = link_to 'RayBot', 'https://t.me/ray_silver_bot', target: :blank, class: 'bg-slate-800 rounded shadow hover:bg-slate-700 text-slate-500 shadow px-1'
+    = link_to 'RayBot', 'https://t.me/ray_silver_bot', target: :_blank, class: 'bg-slate-800 rounded shadow hover:bg-slate-700 text-slate-500 shadow px-1'
   
-.grid.grid-cols-2.gap-4.text-xl
+.grid.grid-cols-2.gap-4.text-xl.w-full
 
   .rounded.bg-slate-900.border.border-slate-800.border-2.shadow.p-4
     .text-2xl Wallets
@@ -34,7 +34,7 @@
 
     - @wallets.each do |wallet|
       .my-3.grid.grid-cols-6.gap-2
-        .col-span-5 = link_to "...#{wallet.address.last(6)}", "https://app.cielo.finance/profile/#{wallet.address}", target: :blank, class: 'bg-slate-800 px-2 rounded shadow hover:bg-slate-700 text-slate-500'
+        .col-span-5 = link_to "...#{wallet.address.last(6)}", "https://app.cielo.finance/profile/#{wallet.address}/pnl/tokens", target: :_blank, class: 'bg-slate-800 px-2 rounded shadow hover:bg-slate-700 text-slate-500'
         = link_to '❌', wallet_path(wallet, wallet: {status: :discarded}), method: :patch, class: 'bg-slate-800 px-2 rounded shadow hover:bg-slate-700 text-center shadow', data: {confirm: 'Are you sure?'}
       - unless wallet == @wallets.last
         hr.border-slate-800
@@ -49,7 +49,7 @@
     - @projects.each do |project|
       .my-3.grid.grid-cols-6.gap-2
         .col-span-4 = project.name
-        = link_to "...#{project.pair.last(6)}", "https://dexscreener.com/solana/#{project.pair}", target: :blank, class: 'bg-slate-800 px-2 rounded shadow hover:bg-slate-700 text-center shadow'
+        = link_to "...#{project.pair.last(6)}", "https://dexscreener.com/solana/#{project.pair}", target: :_blank, class: 'bg-slate-800 px-2 rounded shadow hover:bg-slate-700 text-center shadow'
         = link_to '❌', project_path(project, project: {status: :discarded}), method: :patch, class: 'bg-slate-800 px-2 rounded shadow hover:bg-slate-700 text-center shadow', data: {confirm: 'Are you sure?'}
       - unless project == @projects.last
         hr.border-slate-800
