@@ -3,7 +3,7 @@ class Wallet < ApplicationRecord
   validates_presence_of :address
 
   enum status: {
-    new: 0,
+    unchecked: 0,
     active: 1,
     discarded: 10
   }

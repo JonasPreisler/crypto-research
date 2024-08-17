@@ -3,7 +3,7 @@ class Project < ApplicationRecord
   validates_presence_of :pair
 
   enum status: {
-    new: 0,
+    unchecked: 0,
     active: 1,
     discarded: 10
   }
