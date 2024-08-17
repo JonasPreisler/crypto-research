@@ -18,6 +18,8 @@
       .my-3.grid.grid-cols-6.gap-2
         .col-span-5 = link_to "...#{wallet.address.last(4)}", "https://app.cielo.finance/profile/#{wallet.address}", target: :blank, class: 'bg-slate-800 px-2 rounded shadow hover:bg-slate-700 text-slate-500'
         = link_to '❌', wallet_path(wallet, wallet: {status: :discarded}), method: :patch, class: 'bg-slate-800 px-2 rounded shadow hover:bg-slate-700 text-center shadow', data: {confirm: 'Are you sure?'}
+      - unless wallet == @wallets.last
+        hr.border-slate-800
 
   .rounded.bg-slate-900.border.border-slate-800.border-2.shadow.p-4
     .text-2xl Projects
@@ -31,4 +33,5 @@
         .col-span-4 = project.name
         = link_to "...#{project.pair.last(4)}", "https://dexscreener.com/solana/#{project.pair}", target: :blank, class: 'bg-slate-800 px-2 rounded shadow hover:bg-slate-700 text-center shadow'
         = link_to '❌', project_path(project, project: {status: :discarded}), method: :patch, class: 'bg-slate-800 px-2 rounded shadow hover:bg-slate-700 text-center shadow', data: {confirm: 'Are you sure?'}
-
+      - unless project == @projects.last
+        hr.border-slate-800
