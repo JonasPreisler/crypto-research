@@ -1,7 +1,7 @@
 class WalletsController < ApplicationController
 
   def create
-    Wallet.create(address: params[:wallet][:address])
+    Wallet.create(params[:wallet].permit!)
     redirect_to root_path
   end
 

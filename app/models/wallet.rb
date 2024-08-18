@@ -1,6 +1,7 @@
 class Wallet < ApplicationRecord
   has_many :projects, through: :project_wallets
   validates_presence_of :address
+  validates_uniqueness_of :address
 
   enum status: {
     unchecked: 0,

@@ -1,6 +1,7 @@
 class Project < ApplicationRecord
   has_many :wallets, through: :project_wallets
   validates_presence_of :pair
+  validates_uniqueness_of :pair
 
   enum status: {
     unchecked: 0,
