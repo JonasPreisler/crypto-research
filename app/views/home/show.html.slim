@@ -1,10 +1,10 @@
 
 .flex.flex-wrap.gap-4.text-xl
-  .p-2.rounded.bg-slate-900.w-48.border.border-slate-800.shadow
+  .p-2.rounded.bg-slate-950.w-48.border.border-slate-900.shadow
     .mb-3
       .text-sm.font-bold.bg-black.rounded.inline.tracking-wide.py-1.px-2.text-emerald-500 FIND WALLET
     .my-3 = link_to 'dex', 'https://dexscreener.com/?rankBy=trendingScoreH6&order=desc&minLiq=50000&min24HTxns=200&min24HVol=100000', target: :_blank, class: 'bg-slate-800 rounded shadow hover:bg-slate-700 text-slate-500 shadow px-1'
-  .p-2.rounded.bg-slate-900.w-96.border.border-slate-800.shadow
+  .p-2.rounded.bg-slate-950.w-96.border.border-slate-900.shadow
     .mb-3
       .text-sm.font-bold.bg-black.rounded.inline.tracking-wide.py-1.px-2.text-emerald-500 CHECK PROJECT
     .my-3 = link_to 'twitter score', 'https://twitterscore.io/', target: :_blank, class: 'bg-slate-800 rounded shadow hover:bg-slate-700 text-slate-500 shadow px-1'
@@ -15,7 +15,7 @@
       div Liquidity must be collateralized
       div Top 10 holders must not own more than 30% of the token
 
-  .p-2.rounded.bg-slate-900.w-48.border.border-slate-800.shadow
+  .p-2.rounded.bg-slate-950.w-48.border.border-slate-900.shadow
     .mb-3
       .text-sm.font-bold.bg-black.rounded.inline.tracking-wide.py-1.px-2.text-emerald-500 TRACK WALLET
     .my-3 = link_to 'cielo', 'https://app.cielo.finance/feed', target: :_blank, class: 'bg-slate-800 rounded shadow hover:bg-slate-700 text-slate-500 shadow px-1'
@@ -26,7 +26,7 @@
   
 .grid.grid-cols-2.gap-4.text-xl.w-full
 
-  .rounded.bg-slate-900.border.border-slate-800.border-2.shadow.p-4
+  .rounded.bg-slate-950.border.border-slate-800.b9rder-2.shadow.p-4
     .text-2xl Wallets
     = form_with model: Wallet.new, class: 'my-6' do |f|
       .flex.gap-3
@@ -42,7 +42,7 @@
       - unless wallet == @wallets.last
         hr.border-slate-800
 
-  .rounded.bg-slate-900.border.border-slate-800.border-2.shadow.p-4
+  .rounded.bg-slate-950.border.border-slate-800.b9rder-2.shadow.p-4
     .text-2xl Projects
     = form_with model: Project.new, class: 'flex gap-3 my-6' do |f|
       = f.text_field :name, placeholder: 'Name', class: 'flex-grow text-lg bg-slate-800 border p-2 rounded border-none', required: true
